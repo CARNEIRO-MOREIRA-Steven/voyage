@@ -1,6 +1,7 @@
 import { Button, Card, Form } from "react-bootstrap";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -109,8 +110,8 @@ function RegisterPage() {
         <section>
             <h1 className="mb-4 text-center">Inscription</h1>
             <Card className="shadow-sm border-0 mb-4">
-                <Card.Body>
-                    <Form onSubmit={handleSubmit(onSubmit)} className="form" noValidate>
+                <Card.Body className="d-flex flex-column align-items-center text-center gap-3">
+                    <Form onSubmit={handleSubmit(onSubmit)} className="form d-flex flex-column align-items-center text-center gap-3" noValidate>
                         <Form.Group controlId="username">
                             <Form.Label>
                                 Votre username
@@ -213,9 +214,9 @@ function RegisterPage() {
                                 {errors.genred?.message}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group controlId="genred">
+                        <Form.Group controlId="avatar">
                             <Form.Label>
-                                Homme ou Femme
+                                Avatar
                             </Form.Label>
                             {console.log(register("avatar"))}
                             <Form.Control

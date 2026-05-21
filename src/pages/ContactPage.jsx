@@ -95,10 +95,10 @@ useEffect(() => {
     return (
         <section>
             <h1 className="mb-4 text-center">Demande de contact</h1>
-            <h2>Contactez-nous</h2>
+            <h2 className="text-center">Contactez-nous</h2>
             <Card className="shadow-sm border-0 mb-4">
-                <Card.Body>
-                    <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+                <Card.Body className="d-flex flex-column align-items-center text-center gap-3">
+                    <Form className="form d-flex flex-column align-items-center text-center gap-3" onSubmit={handleSubmit(onSubmit)} noValidate>
                         <Form.Group controlId="email">
                             <Form.Label>
                                 Votre adresse mail
